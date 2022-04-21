@@ -30,10 +30,10 @@ function ExtractIdentifiers(src)
     return identifiers
 end
 
-local logs = "your-webhook-here"
+local logs = "discord-webhookunuzu-giriniz" 
 
-local kick_msg = "Hmm, what you wanna do in this inspector?"
-local discord_msg = '`Player try to use nui_devtools`\n`and he got a kick`\n`ANTI NUI_DEVTOOLS`'
+local kick_msg = "Kick mesajınızı buraya giriniz" 
+local discord_msg = '`Discordun webhookunuza göndereceği mesajı buraya giriniz`'
 local color_msg = 16767235
 
 function sendToDiscord (source,message,color,identifier)
@@ -48,12 +48,12 @@ function sendToDiscord (source,message,color,identifier)
             ["title"] = message,
             ["description"] = "`Player`: **"..name.."**\nSteam: **"..identifier.steam.."** \nIP: **"..identifier.ip.."**\nDiscord: **"..identifier.discord.."**\nFivem: **"..identifier.license.."**",
             ["footer"] = {
-                ["text"] = "© QamarQ & vjuton - "..os.date("%x %X %p")
+                ["text"] = "© Lod - "..os.date("%x %X %p")
             },
         }
     }
 
-    PerformHttpRequest(logs, function(err, text, headers) end, 'POST', json.encode({username = "YourRP - Anti nui_devtools", embeds = sendD}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(logs, function(err, text, headers) end, 'POST', json.encode({username = "NUI_BLOCKER - LOD", embeds = sendD}), { ['Content-Type'] = 'application/json' })
 end
 
 
